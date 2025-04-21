@@ -38,6 +38,7 @@
     </main>
     <div class="popup-overlay" id="popup-overlay" onclick="closeAllPopups()"></div>
     <div class="popup" id="popup">
+        <button class="close-btn" onclick="closeAllPopups()" aria-label="Close">&times;</button>
         <div class="icon-grid">
             <div class="icon-item" onclick="window.open('https://www.tiktok.com/@adnotfake', '_blank')">
                 <img src="icons/tiktok.png" alt="TikTok Icon" style="width: 48px; height: 48px;">
@@ -54,12 +55,13 @@
         </div>
     </div>
     <div class="popup" id="aboutme-popup">
+        <button class="close-btn" onclick="closeAllPopups()" aria-label="Close">&times;</button>
         <h3>ABOUT ME</h3>
         <div style="display: flex; flex-direction: row; align-items: center; gap: 2.5rem; justify-content: center; margin-bottom: 1.5rem;">
             <img src="icons/MainPfp.jpg" alt="Main Profile Picture" style="width: 120px; height: 120px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
             <div>
-                <p style="margin: 0; font-size: 1.1rem; text-align: left; font-weight: bold; color: #0011ff;">ADnotfake</p>
-                <p style="margin: 0.5rem 0 0 0; font-size: 1.15rem !important; color: inherit; text-align: left;">developer, gamer, content creator</p>
+                <p style="margin: 0; font-size: 2.1rem; text-align: center; font-weight: bold; color: #0011ff;">ADnotfake</p>
+                <p style="margin: 0.5rem 0 0 0; font-size: 1.15rem !important; color: inherit; text-align: center;">developer, gamer, content creator</p>
             </div>
         </div>
         <p style="margin-bottom: 1.5rem;">i love tech and playing with friends :D and some other things like..</p>
