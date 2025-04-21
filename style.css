@@ -141,6 +141,9 @@ button.link-button:hover, h2.link-button:hover {
     opacity: 0;
     pointer-events: none;
     transform: translate(-50%, -48%) scale(0.96);
+    min-width: 250px;
+    min-height: 200px;
+    box-sizing: border-box;
 }
 
 .popup.open {
@@ -155,6 +158,137 @@ button.link-button:hover, h2.link-button:hover {
     transform: translate(-50%, -48%) scale(0.96);
 }
 
+.popup .close-btn {
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.popup .close-btn:hover {
+    color: #000000;
+}
+
+.dark-mode .popup .close-btn {
+    color: #fff;
+    background: transparent;
+}
+
+@media (max-width: 600px) {
+    html, body {
+        font-size: 1.15rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    h2 {
+        font-size: 2rem !important;
+    }
+    h4 {
+        font-size: 1.6rem !important;
+    }
+    .popup {
+        width: 100vw;
+        max-width: 100vw;
+        min-width: unset;
+        padding: 1.2rem 0.5rem 2.5rem 0.5rem;
+        left: 0;
+        top: 0;
+        transform: none;
+        border-radius: 0;
+        height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+        transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.3s cubic-bezier(0.4,0,0.2,1);
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+    }
+    .popup.open {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .popup.closing {
+        transform: translateY(40px) scale(0.98);
+        opacity: 0;
+        transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .popup.open {
+        transform: none;
+    }
+    .popup .close-btn {
+        position: fixed;
+        top: 0.7rem;
+        right: 1rem;
+        z-index: 2000;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        color: #000;
+        font-size: 2.2rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .dark-mode .popup .close-btn {
+        background: transparent;
+        color: #fff;
+    }
+    .popup#aboutme-popup > div[style*="flex-direction: row"] {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        margin-bottom: 1.2rem !important;
+        justify-content: flex-start !important;
+    }
+    .popup#aboutme-popup img[alt="Main Profile Picture"] {
+        margin-bottom: 0 !important;
+        margin-right: 0.7rem !important;
+    }
+    .popup#aboutme-popup > div > div {
+        text-align: left !important;
+    }
+    .popup#aboutme-popup > div[style*="flex-direction: row"] {
+        flex-direction: column !important;
+        gap: 1.2rem !important;
+        margin-bottom: 1.2rem !important;
+        align-items: center !important;
+    }
+    .popup#aboutme-popup img[alt="Main Profile Picture"] {
+        margin-bottom: 0.7rem;
+    }
+    .popup#aboutme-popup div[style*="max-width: 400px"] {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    .icon-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    h2, h3, h4 {
+        font-size: 1.2rem ;
+    }
+    .dark-mode-toggle {
+        padding: 0.5rem;
+        top: 5px;
+        left: 5px;
+    }
+    .popup#aboutme-popup p[style*='font-weight: bold;'] {
+        font-size: 1.4rem !important;
+    }
+}
+
 .dark-mode .popup {
     background-color: #2D4045;
     border-color: #172120;
@@ -167,7 +301,7 @@ button.link-button:hover, h2.link-button:hover {
 }
 
 .popup#aboutme-popup p[style*='font-weight: bold;'] {
-    font-size: 1.4rem !important;
+    font-size: 2.1rem;
 }
 
 .popup#aboutme-popup p[style*='color: #666;'] {
